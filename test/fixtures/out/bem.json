@@ -1,0 +1,26 @@
+{
+  "button": "button",
+  "button_": {
+    "icon": "button__icon",
+    "text": "button__text",
+    "icon$": {
+      "square": "button__icon button__icon--square",
+      "blue": "button__icon button__icon--blue"
+    },
+    "iconToCamelCase": "button__icon-to-camel-case"
+  },
+  "button$": {
+    "small": "button button--small",
+    "pink": "button button--pink"
+  },
+  "buttonToCamelCase": "button-to-camel-case",
+  "buttonToCamelCase_": {
+    "iconToCamelCase": "button-to-camel-case__icon-to-camel-case",
+    "iconToCamelCase$": {
+      "smallToCamelCase": "button-to-camel-case__icon-to-camel-case button-to-camel-case__icon-to-camel-case--small-to-camel-case"
+    }
+  },
+  "buttonToCamelCase$": {
+    "smallToCamelCase": "button-to-camel-case button-to-camel-case--small-to-camel-case"
+  }
+}

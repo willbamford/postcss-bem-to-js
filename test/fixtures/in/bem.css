@@ -1,0 +1,25 @@
+div {}
+
+#ignore {}
+
+.button {}
+.button {} /* repeated */
+
+.button__icon {}
+.button__text {}
+
+.button--small {}
+.button--pink {}
+
+.button__icon--square {}
+.button__icon--blue {}
+
+.button-to-camel-case {}
+
+.button__icon-to-camel-case {}
+
+.button-to-camel-case__icon-to-camel-case {}
+
+.button-to-camel-case--small-to-camel-case {}
+
+.button-to-camel-case__icon-to-camel-case--small-to-camel-case {}

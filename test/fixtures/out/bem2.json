@@ -1,0 +1,8 @@
+{
+  "myButton": {
+    "_": "my-button",
+    "_pinkOne": "my-button my-button--pink-one",
+    "myIcon": "my-button__my-icon",
+    "myIcon_quiteSmall": "my-button__my-icon my-button__my-icon--quite-small"
+  }
+}

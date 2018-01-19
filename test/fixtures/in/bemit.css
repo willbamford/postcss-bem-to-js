@@ -1,0 +1,11 @@
+.c-foo {}
+
+.c-foo-bar {}
+
+.o-my-object {}
+
+.o-my-object__element {}
+
+.o-my-object--modifier {}
+
+.no-prefix {}

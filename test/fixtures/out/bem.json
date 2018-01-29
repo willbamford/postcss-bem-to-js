@@ -1,26 +1,15 @@
 {
-  "button": "button",
-  "button_": {
-    "icon": "button__icon",
-    "text": "button__text",
-    "icon$": {
-      "square": "button__icon button__icon--square",
-      "blue": "button__icon button__icon--blue"
+  "MyButton": {
+    "$": "my-button",
+    "$sizeSmall": "my-button my-button--size-small",
+    "$colorPink": "my-button my-button--color-pink",
+    "icon": {
+      "$": "my-button__icon",
+      "$square": "my-button__icon my-button__icon--square",
+      "$colorBlue": "my-button__icon my-button__icon--color-blue"
     },
-    "iconToCamelCase": "button__icon-to-camel-case"
-  },
-  "button$": {
-    "small": "button button--small",
-    "pink": "button button--pink"
-  },
-  "buttonToCamelCase": "button-to-camel-case",
-  "buttonToCamelCase_": {
-    "iconToCamelCase": "button-to-camel-case__icon-to-camel-case",
-    "iconToCamelCase$": {
-      "smallToCamelCase": "button-to-camel-case__icon-to-camel-case button-to-camel-case__icon-to-camel-case--small-to-camel-case"
+    "infoText": {
+      "$": "my-button__info-text"
     }
-  },
-  "buttonToCamelCase$": {
-    "smallToCamelCase": "button-to-camel-case button-to-camel-case--small-to-camel-case"
   }
 }

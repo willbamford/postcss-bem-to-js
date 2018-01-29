@@ -614,15 +614,6 @@ ol,
 dd {
   margin-left: 2rem; }
 
-::-webkit-input-placeholder {
-  color: #8e8e8e; }
-
-::-moz-placeholder {
-  color: #8e8e8e; }
-
-:-ms-input-placeholder {
-  color: #8e8e8e; }
-
 ::placeholder {
   color: #8e8e8e; }
 
@@ -1060,8 +1051,7 @@ code {
   /* 1 */
   clip: rect(1px, 1px, 1px, 1px) ;
   /* 2 */
-  -webkit-clip-path: inset(50%) ;
-          clip-path: inset(50%) ;
+  clip-path: inset(50%) ;
   /* 3 */
   top: 100%;
   left: 0;
@@ -1090,8 +1080,7 @@ code {
   height: auto ;
   white-space: normal ;
   clip: auto ;
-  -webkit-clip-path: none ;
-          clip-path: none ;
+  clip-path: none ;
   position: absolute; }
 
 /*
@@ -1928,7 +1917,6 @@ code {
 .ln-o-grid--equal-height,
 .ln-o-grid--equal-height > .ln-o-grid__item,
 .ln-o-grid--equal-height--centered-content > .ln-o-grid__item {
-  display: -ms-flexbox;
   display: flex; }
   .ln-o-grid--equal-height > *,
   .ln-o-grid--equal-height > .ln-o-grid__item > *,
@@ -1941,18 +1929,14 @@ code {
     a combined width of the grid-items is > 100%.
     */
 .ln-o-grid--equal-height {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
 
 .ln-o-grid--equal-height.ln-u-text-align-center {
-  -ms-flex-pack: center;
-      justify-content: center; }
+  justify-content: center; }
 
 .ln-o-grid--equal-height--centered-content > .ln-o-grid__item > * {
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
+  align-items: center;
+  justify-content: center; }
 
 .ln-o-grid--center > .ln-o-grid__item {
   vertical-align: middle; }
@@ -2127,8 +2111,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   border-radius: 1px;
   text-align: center;
   text-decoration: none;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   background-color: transparent; }
@@ -2266,9 +2249,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   border-width: 0 0 0 1px;
   border-left-color: #fff;
   color: transparent;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-image: url("data:image/svg+xml;base64, IDxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTg1LjM0NCIgaGVpZ2h0PSIxODUuMzQ0IiB2aWV3Qm94PSIwIDAgMTg1LjM0NCAxODUuMzQ0Ij48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNOTIuNjcyIDE0NC4zNzNjLTIuNzUyIDAtNS40OTMtMS4wNDQtNy41OTMtMy4xMzhMMy4xNDQgNTkuM2MtNC4xOTQtNC4xOTgtNC4xOTQtMTAuOTkgMC0xNS4xOCA0LjE5NC00LjE5OCAxMC45ODctNC4xOTggMTUuMTggMGw3NC4zNDcgNzQuMzQyIDc0LjM0Ny03NC4zNGM0LjE5My00LjIgMTAuOTg2LTQuMiAxNS4xOCAwIDQuMTkzIDQuMTkzIDQuMTkzIDEwLjk4IDAgMTUuMThsLTgxLjk0IDgxLjkzM2MtMi4wOTQgMi4wOTQtNC44NCAzLjEzOC03LjU4OCAzLjEzOHoiLz48L3N2Zz4=");
   background-position: center 55%;
   background-size: auto 35%;
@@ -2287,10 +2268,8 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
 
 .ln-c-form-group.has-error,
 .ln-c-form-group.has-warning {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: column;
-      flex-flow: column; }
+  flex-flow: column; }
 
 .ln-c-field-info {
   margin-bottom: 0.5rem;
@@ -2300,13 +2279,11 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   padding-top: 0.5rem;
   color: #0c0c0c;
   font-weight: bold;
-  -ms-flex-order: 1;
-      order: 1; }
+  order: 1; }
   .ln-c-form-group.has-error .ln-c-field-info--error {
     color: #db3e34; }
   .ln-c-field-info--error.ln-c-field-info--validation-first {
-    -ms-flex-order: 0;
-        order: 0; }
+    order: 0; }
 
 .ln-c-field-info--error::before {
   font-size: 1.33333rem;
@@ -2358,8 +2335,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   position: absolute;
   right: 0;
   top: 50%;
-  -ms-transform: rotate(0) translateY(-50%);
-      transform: rotate(0) translateY(-50%); }
+  transform: rotate(0) translateY(-50%); }
 
 .ln-c-foldable:not([class*='ln-c-foldable@']) > .ln-c-foldable__head {
   padding-top: 1rem;
@@ -2456,8 +2432,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   overflow: visible; }
 
 [class*='ln-c-foldable'].is-open > .ln-c-foldable__head > .ln-c-foldable__toggle > .ln-c-foldable__chevron {
-  -ms-transform: rotate(180deg) translateY(50%);
-      transform: rotate(180deg) translateY(50%); }
+  transform: rotate(180deg) translateY(50%); }
 
 .ln-c-form-group {
   position: relative;
@@ -2482,8 +2457,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   /* 1 */
   clip: rect(1px, 1px, 1px, 1px) ;
   /* 2 */
-  -webkit-clip-path: inset(50%) ;
-          clip-path: inset(50%) ;
+  clip-path: inset(50%) ;
   /* 3 */ }
 
 .ln-c-form-option__label {
@@ -2601,9 +2575,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   width: 100%;
   border-radius: 1px;
   color: #4c4c4c;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none; }
+  appearance: none; }
 
 @-moz-document url-prefix('') {
   .ln-c-select {
@@ -2741,12 +2713,10 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
 
 .ln-c-table__sort-button.is-active .ln-c-table__sort-text::after {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODUuMzQ0IiBoZWlnaHQ9IjE4NS4zNDQiIHZpZXdCb3g9IjAgMCAxODUuMzQ0IDE4NS4zNDQiPjxwYXRoIGZpbGw9IiMxNjE2MTYiIGQ9Ik05Mi42NzIgMTQ0LjM3M2MtMi43NTIgMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NCA1OS4zYy00LjE5NC00LjE5OC00LjE5NC0xMC45OSAwLTE1LjE4IDQuMTk0LTQuMTk4IDEwLjk4Ny00LjE5OCAxNS4xOCAwbDc0LjM0NyA3NC4zNDIgNzQuMzQ3LTc0LjM0YzQuMTkzLTQuMiAxMC45ODYtNC4yIDE1LjE4IDAgNC4xOTMgNC4xOTMgNC4xOTMgMTAuOTggMCAxNS4xOGwtODEuOTQgODEuOTMzYy0yLjA5NCAyLjA5NC00Ljg0IDMuMTM4LTcuNTg4IDMuMTM4eiIvPjwvc3ZnPg==");
-  -ms-transform: scale(0.9);
-      transform: scale(0.9); }
+  transform: scale(0.9); }
 
 .ln-c-table__sort-button.is-ascending .ln-c-table__sort-text::after {
-  -ms-transform: rotate(180deg) scale(0.9);
-      transform: rotate(180deg) scale(0.9); }
+  transform: rotate(180deg) scale(0.9); }
 
 /* stylelint-disable-next-line max-nesting-depth */
 @media (min-width: 960px) {
@@ -2792,8 +2762,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
     /* 1 */
     clip: rect(1px, 1px, 1px, 1px) ;
     /* 2 */
-    -webkit-clip-path: inset(50%) ;
-            clip-path: inset(50%) ;
+    clip-path: inset(50%) ;
     /* 3 */ }
   .ln-c-table--responsive\@md .ln-c-table__header {
     padding-left: 0.5rem; }
@@ -2869,15 +2838,6 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
 
-.ln-c-text-input::-webkit-input-placeholder {
-  color: #8e8e8e; }
-
-.ln-c-text-input::-moz-placeholder {
-  color: #8e8e8e; }
-
-.ln-c-text-input:-ms-input-placeholder {
-  color: #8e8e8e; }
-
 .ln-c-text-input::placeholder {
   color: #8e8e8e; }
 
@@ -2904,8 +2864,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   /* stylelint-disable-next-line max-nesting-depth */
   position: absolute;
   top: 50%;
-  -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 1rem;
   color: #0c0c0c;
   font-weight: bold;
@@ -3207,8 +3166,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   background-color: transparent; }
@@ -7203,8 +7161,7 @@ grid system that contains negative margin equal to `$half-spacing-unit`.
   /* 1 */
   clip: rect(1px, 1px, 1px, 1px) !important;
   /* 2 */
-  -webkit-clip-path: inset(50%) !important;
-          clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   /* 3 */ }
 
 .ln-u-circle {

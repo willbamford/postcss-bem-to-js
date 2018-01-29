@@ -29,10 +29,6 @@ const run = (name, opts) => {
         });
 };
 
-// it('should handle BEM syntax', () => {
-//     return run('bem2');
-// });
-
 it('should handle BEM syntax', () => {
     return run('bem');
 });
@@ -40,9 +36,9 @@ it('should handle BEM syntax', () => {
 it('should handle BEMIT syntax using prefix mapping', () => {
     return run('bemit', {
         prefixMap: {
-            'o-': 'objects',
-            'c-': 'components',
-            'u-': 'utilities'
+            'o-': 'o',
+            'c-': 'c',
+            'u-': 'u'
         }
     });
 });
@@ -50,9 +46,9 @@ it('should handle BEMIT syntax using prefix mapping', () => {
 it.only('should handle namespaced BEMIT syntax using prefix mapping', () => {
     return run('s', {
         prefixMap: {
-            'ln-o-': 'objects',
-            'ln-c-': 'components',
-            'ln-u-': 'utilities'
+            'ln-o-': 'o',
+            'ln-c-': 'c',
+            'ln-u-': 'u'
         }
     });
 });

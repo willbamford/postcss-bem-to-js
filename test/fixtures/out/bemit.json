@@ -1,16 +1,18 @@
 {
-  "noPrefix": "no-prefix",
-  "components": {
-    "foo": "c-foo",
-    "fooBar": "c-foo-bar"
+  "NoPrefix": {
+    "$": "no-prefix"
   },
-  "objects": {
-    "myObject": "o-my-object",
-    "myObject$": {
-      "modifier": "o-my-object o-my-object--modifier"
-    },
-    "myObject_": {
-      "element": "o-my-object__element"
+  "cFoo": {
+    "$": "c-foo"
+  },
+  "cFooBar": {
+    "$": "c-foo-bar"
+  },
+  "oMyObject": {
+    "$": "o-my-object",
+    "$modifier": "o-my-object o-my-object--modifier",
+    "element": {
+      "$": "o-my-object__element"
     }
   }
 }

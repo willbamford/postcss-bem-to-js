@@ -2,24 +2,14 @@ div {}
 
 #ignore {}
 
-.button {}
-.button {} /* repeated */
+.my-button {}
+.my-button {} /* repeated */
 
-.button__icon {}
-.button__text {}
+.my-button--size-small {}
+.my-button--color-pink {}
 
-.button--small {}
-.button--pink {}
+.my-button__icon {}
+.my-button__info-text {}
 
-.button__icon--square {}
-.button__icon--blue {}
-
-.button-to-camel-case {}
-
-.button__icon-to-camel-case {}
-
-.button-to-camel-case__icon-to-camel-case {}
-
-.button-to-camel-case--small-to-camel-case {}
-
-.button-to-camel-case__icon-to-camel-case--small-to-camel-case {}
+.my-button__icon--square {}
+.my-button__icon--color-blue {}

@@ -3,13 +3,17 @@ const postcss = require('postcss');
 const parser = require('postcss-selector-parser');
 const objectPath = require('object-path');
 const fs = require('fs');
-const process = require('./process');
 
 const DEFAULT_ELEMENT = '__';
 const DEFAULT_MODIFIER = '--';
 
 const toCamelCase = (str) =>
     str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+
+const toUpperCamelCase = (str) => {
+    const s = toCamelCase(str);
+    return s.charAt(0).toUpperCase() + s.slice(1);
+};
 
 const beginsWith = (haystack, needle) => haystack.indexOf(needle) === 0;
 
@@ -30,7 +34,8 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (opts) => {
 
         const classNames = {};
 
-        const keyTransform = toCamelCase;
+        const elementKeyTransform = toCamelCase;
+        const blockKeyTransform = toUpperCamelCase;
 
         const setOutput = (path, value) => {
             let prefix = undefined;
@@ -42,11 +47,20 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (opts) => {
                     }
                 });
             }
-            const transformedPath = path.map(keyTransform);
-            const finalPath = prefix ?
-                [prefix].concat(transformedPath) :
-                transformedPath;
-            objectPath.set(output, finalPath, value);
+            const transformedPath = path.map((p, i) => {
+                if (i === 0) {
+                    return `${prefix ? prefix : ''}${blockKeyTransform(p)}`;
+                }
+                return elementKeyTransform(p);
+            });
+            // const finalPath = transformedPath;
+                // prefix ?
+                // [prefix].concat(transformedPath) :
+                // transformedPath;
+
+            // if (prefix) {}
+
+            objectPath.set(output, transformedPath, value);
         };
 
         const processClassNode = (classNode) => {
@@ -71,14 +85,14 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (opts) => {
                         // const ekey = genEKey(block);
                         // const mkey = genMKey(element);
                         setOutput(
-                            [block, `${element}_${modifier}`],
+                            [block, element, `$${modifier}`],
                             `${block}${edel}${element} ${className}`
                         );
                     } else {
                         // Element with no modifier
                         const [block, element] = className.split(edel);
                         setOutput(
-                            [block, element],
+                            [block, element, '$'],
                             className
                         );
                     }
@@ -88,13 +102,16 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (opts) => {
                         // Block with modifier
                         const [block, modifier] = className.split(mdel);
                         setOutput(
-                            [block, `_${modifier}`],
+                            [block, `$${modifier}`],
                             `${block} ${className}`
                         );
                     } else {
                         // Block with no modifier
                         const bkey = className;
-                        setOutput([className, '_'], className);
+                        setOutput(
+                            [className, '$'],
+                            className
+                        );
                     }
                     /* eslint-enable no-lonely-if */
                 }

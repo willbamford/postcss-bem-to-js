@@ -11,5 +11,11 @@
     "infoText": {
       "$": "my-button__info-text"
     }
+  },
+  "MyButton@Sm": {
+    "$": "my-button@sm"
+  },
+  "MyButton1A": {
+    "$": "my-button-1-a"
   }
 }

@@ -4,6 +4,7 @@ const parser = require('postcss-selector-parser')
 const objectPath = require('object-path')
 const fs = require('fs')
 const util = require('./util')
+const saveJson = require('./saveJson')
 
 const DEFAULT_ELEMENT = '__'
 const DEFAULT_MODIFIER = '--'
@@ -14,6 +15,7 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
   const opts = o || {}
   const optPrefixMap = opts.prefixMap
   const optReplace = opts.replace || {}
+  const getJson = opts.getJson || saveJson
   const prefixKeys = optPrefixMap && Object.keys(optPrefixMap)
 
   const edel = DEFAULT_ELEMENT
@@ -41,7 +43,7 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
 
     const unescape = str => str.replace(/\\/g, '')
 
-    const sanitise = str => str.replace('-', '')
+    const sanitise = str => unescape(str).replace('-', '')
 
     const setOutput = (inputPath, value) => {
       const path = inputPath
@@ -94,24 +96,20 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
               className,
             )
           }
+        } else if (mloc > 0) {
+          // Block with modifier
+          const [block, modifier] = className.split(mdel)
+          setOutput(
+            [block, `$${modifier}`],
+            `${block} ${className}`,
+          )
         } else {
-          /* eslint-disable no-lonely-if */
-          if (mloc > 0) {
-            // Block with modifier
-            const [block, modifier] = className.split(mdel)
-            setOutput(
-              [block, `$${modifier}`],
-              `${block} ${className}`,
-            )
-          } else {
-            // Block with no modifier
-            const bkey = className
-            setOutput(
-              [className, '$'],
-              className,
-            )
-          }
-          /* eslint-enable no-lonely-if */
+          // Block with no modifier
+          const bkey = className
+          setOutput(
+            [className, '$'],
+            className,
+          )
         }
       }
     }
@@ -123,11 +121,6 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
 
     root.walkRules(rule => selectorProcessor.process(rule))
 
-    console.log(JSON.stringify(output, null, 2))
-    // fs.writeFileSync('output.json', JSON.stringify(output, null, 2));
-
-    if (opts.getJson) {
-      opts.getJson(output)
-    }
+    return getJson(root.source.input.file, output)
   }
 })

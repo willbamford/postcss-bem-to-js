@@ -12,7 +12,7 @@
       "$": "my-button__info-text"
     }
   },
-  "MyButton@Sm": {
+  "MyButton@sm": {
     "$": "my-button@sm"
   },
   "MyButton1A": {

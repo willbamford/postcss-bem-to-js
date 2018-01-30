@@ -1,6 +1,6 @@
 {
   "name": "postcss-bem-to-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "PostCSS plugin generates JavaScript from BEM (including ITCSS / BEMIT) style CSS",
   "keywords": [
     "postcss",

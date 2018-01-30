@@ -14,7 +14,7 @@ const run = (name, opts) => {
 
   const options = opts || {}
 
-  options.getJson = (json) => {
+  options.getJson = (_, json) => {
     resultJson = json
   }
 
@@ -44,8 +44,8 @@ it('should handle replace config', () => run('replace', {
     'ln-u-': 'u',
   },
   replace: {
-    '@': 'At',
-    '\\/': 'Of',
+    '@': '_',
+    '\\/': 'of',
   },
 }))
 

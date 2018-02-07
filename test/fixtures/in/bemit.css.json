@@ -1,0 +1,18 @@
+{
+  "cFoo": {
+    "$": "c-foo"
+  },
+  "cFooBar": {
+    "$": "c-foo-bar"
+  },
+  "oMyObject": {
+    "$": "o-my-object",
+    "element": {
+      "$": "o-my-object__element"
+    },
+    "$modifier": "o-my-object o-my-object--modifier"
+  },
+  "NoPrefix": {
+    "$": "no-prefix"
+  }
+}

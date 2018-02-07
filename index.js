@@ -2,9 +2,10 @@
 const postcss = require('postcss')
 const parser = require('postcss-selector-parser')
 const objectPath = require('object-path')
-const fs = require('fs')
+const clone = require('clone')
 const util = require('./util')
-const saveJson = require('./saveJson')
+const save = require('./save')
+const toJs = require('./toJs')
 
 const DEFAULT_ELEMENT = '__'
 const DEFAULT_MODIFIER = '--'
@@ -15,7 +16,7 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
   const opts = o || {}
   const optPrefixMap = opts.prefixMap
   const optReplace = opts.replace || {}
-  const getJson = opts.getJson || saveJson
+  const getJs = opts.getJs || save
   const prefixKeys = optPrefixMap && Object.keys(optPrefixMap)
 
   const edel = DEFAULT_ELEMENT
@@ -121,6 +122,6 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
 
     root.walkRules(rule => selectorProcessor.process(rule))
 
-    return getJson(root.source.input.file, output)
+    return getJs(root.source.input.file, output, toJs(output))
   }
 })

@@ -1,0 +1,21 @@
+{
+  "MyButton": {
+    "$": "my-button",
+    "$sizeSmall": "my-button my-button--size-small",
+    "$colorPink": "my-button my-button--color-pink",
+    "icon": {
+      "$": "my-button__icon",
+      "$square": "my-button__icon my-button__icon--square",
+      "$colorBlue": "my-button__icon my-button__icon--color-blue"
+    },
+    "infoText": {
+      "$": "my-button__info-text"
+    }
+  },
+  "MyButton@sm": {
+    "$": "my-button@sm"
+  },
+  "MyButton1A": {
+    "$": "my-button-1-a"
+  }
+}

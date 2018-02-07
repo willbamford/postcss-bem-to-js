@@ -7,15 +7,18 @@ const fixturesPath = path.resolve(__dirname, './fixtures')
 
 const run = (name, opts) => {
   let resultJson
+  let resultJs
   const sourceFile = path.join(fixturesPath, 'in', `${name}.css`)
   const expectedFile = path.join(fixturesPath, 'out', name)
   const sourceCss = fs.readFileSync(sourceFile).toString()
   const expectedJson = fs.readFileSync(`${expectedFile}.json`).toString()
+  const expectedJs = fs.readFileSync(`${expectedFile}.js`).toString()
 
   const options = opts || {}
 
-  options.getJson = (_, json) => {
+  options.getJs = (_, json, js) => {
     resultJson = json
+    resultJs = js
   }
 
   const plugins = [plugin(options)]
@@ -24,6 +27,7 @@ const run = (name, opts) => {
       // console.log(JSON.stringify(resultJson, null, 2));
       expect(result.css).toEqual(sourceCss) /* do not transform input */
       expect(resultJson).toEqual(JSON.parse(expectedJson))
+      expect(resultJs).toEqual(expectedJs)
     })
 }
 
@@ -48,17 +52,3 @@ it('should handle replace config', () => run('replace', {
     '\\/': 'of',
   },
 }))
-
-// it.only('should handle namespaced BEMIT syntax using prefix mapping', () => {
-//     return run('s', {
-//         prefixMap: {
-//             'ln-o-': 'o',
-//             'ln-c-': 'c',
-//             'ln-u-': 'u'
-//         },
-//         replace: {
-//             '@': 'At',
-//             '\\/': 'Of'
-//         }
-//     });
-// });

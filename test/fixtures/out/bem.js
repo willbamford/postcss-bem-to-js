@@ -5,10 +5,10 @@ module.exports = {
     icon: {
       $square: 'my-button__icon my-button__icon--square',
       $colorBlue: 'my-button__icon my-button__icon--color-blue',
-      toString: () => "my-button__icon"
+      toString: function () { return 'my-button__icon' }
     },
     infoText: 'my-button__info-text',
-    toString: () => "my-button"
+    toString: function () { return 'my-button' }
   },
   'MyButton@sm': 'my-button@sm',
   MyButton1A: 'my-button-1-a'

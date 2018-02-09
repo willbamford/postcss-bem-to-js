@@ -4,7 +4,7 @@ module.exports = {
   oMyObject: {
     element: 'o-my-object__element',
     $modifier: 'o-my-object o-my-object--modifier',
-    toString: () => "o-my-object"
+    toString: function () { return 'o-my-object' }
   },
   NoPrefix: 'no-prefix'
 }

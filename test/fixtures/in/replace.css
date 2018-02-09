@@ -1,3 +1,9 @@
 .ln-o-flag\@xs {}
 
 .ln-u-1\/2\@md {}
+
+.ln-c-component__element\@something {}
+
+.ln-c-component--modifier\@something {}
+
+.ln-c-component__element--modifier\@something {}

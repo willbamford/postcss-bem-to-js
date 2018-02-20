@@ -1,6 +1,12 @@
 # PostCSS BEM To JavaScript
 
-Converts CSS to JavaScript. Includes support for BEM / ITCSS / BEMIT syntax.
+Translates CSS classes to a JavaScript file so that you can use typed definitions of styling classes in React / Vue.js etc. It includes support for BEM / ITCSS / BEMIT syntax.
+
+## Why?
+
+* Useful for [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) lookup of CSS classes in your JavaScript.
+* Type safety. Ensures you only use CSS classes that are available (avoid typos / using deprecated classes etc.)
+* Rolls BEM `modifiers` into `block` and `element` strings e.g. `my-block--large { ... }` becomes `MyBlock.$large === 'my-block my-block--large'`.
 
 BEM example (`style.css`):
 
@@ -33,6 +39,12 @@ module.exports = {
 ```
 
 ## Usage
+
+```js
+postcss([
+  require('postcss-bem-to-js')
+])
+```
 
 Example (`postcss.config.json`)
 

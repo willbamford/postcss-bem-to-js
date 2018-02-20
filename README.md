@@ -2,6 +2,8 @@
 
 Translates CSS classes to a JavaScript file so that you can use typed definitions of styling classes in React / Vue.js etc. It includes support for BEM / ITCSS / BEMIT syntax.
 
+![demo](assets/demo.gif)
+
 ## Why?
 
 * Useful for [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) lookup of CSS classes in your JavaScript.

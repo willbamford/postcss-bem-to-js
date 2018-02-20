@@ -1,4 +1,4 @@
-# PostCSS BEM To JavaScript
+# PostCSS BEM To JavaScript [![CircleCI](https://circleci.com/gh/WebSeed/postcss-bem-to-js.svg?style=svg)](https://circleci.com/gh/WebSeed/postcss-bem-to-js)
 
 Translates CSS classes to a JavaScript file so that you can use typed definitions of styling classes in React / Vue.js etc. It includes support for BEM / ITCSS / BEMIT syntax.
 

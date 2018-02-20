@@ -42,13 +42,13 @@ module.exports = {
 
 ## Usage
 
-```js
-postcss([
-  require('postcss-bem-to-js')
-])
+Command line example:
+
+```shell
+postcss --use postcss-bem-to-js ./style.css --config postcss.config.json
 ```
 
-Example (`postcss.config.json`)
+And the `postcss.config.json`:
 
 ```json
 {

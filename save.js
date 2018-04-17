@@ -13,7 +13,7 @@ const writeFile = (file, data) => new Promise((resolve, reject) => {
 
 const save = (cssFile, json, js) => Promise.all([
   writeFile(`${cssFile}.json`, JSON.stringify(json, null, 2)),
-  writeFile(`${cssFile}.js`, js),
+  writeFile(`${cssFile}.js`, js)
 ])
 
 module.exports = save

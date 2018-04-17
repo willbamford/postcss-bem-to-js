@@ -81,20 +81,20 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
               className.substr(0, eloc),
               className.substr(
                 eloc + edel.length,
-                mloc - eloc - edel.length,
+                mloc - eloc - edel.length
               ),
-              className.substr(mloc + mdel.length),
+              className.substr(mloc + mdel.length)
             ]
             setOutput(
               [block, element, `$${modifier}`],
-              `${block}${edel}${element} ${className}`,
+              `${block}${edel}${element} ${className}`
             )
           } else {
             // Element with no modifier
             const [block, element] = className.split(edel)
             setOutput(
               [block, element, '$'],
-              className,
+              className
             )
           }
         } else if (mloc > 0) {
@@ -102,14 +102,14 @@ module.exports = postcss.plugin('postcss-bemit-to-json', (o) => {
           const [block, modifier] = className.split(mdel)
           setOutput(
             [block, `$${modifier}`],
-            `${block} ${className}`,
+            `${block} ${className}`
           )
         } else {
           // Block with no modifier
           const bkey = className
           setOutput(
             [className, '$'],
-            className,
+            className
           )
         }
       }

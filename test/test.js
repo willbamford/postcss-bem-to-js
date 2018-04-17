@@ -37,18 +37,18 @@ it('should handle BEMIT syntax using prefix mapping', () => run('bemit', {
   prefixMap: {
     'o-': 'o',
     'c-': 'c',
-    'u-': 'u',
-  },
+    'u-': 'u'
+  }
 }))
 
 it('should handle replace config', () => run('replace', {
   prefixMap: {
     'ln-o-': 'o',
     'ln-c-': 'c',
-    'ln-u-': 'u',
+    'ln-u-': 'u'
   },
   replace: {
     '@': '_',
-    '\\/': 'of',
-  },
+    '\\/': 'of'
+  }
 }))

@@ -7,5 +7,5 @@ const toUpperCamelCase = (str) => {
 
 module.exports = {
   toCamelCase,
-  toUpperCamelCase,
+  toUpperCamelCase
 }
